@@ -38,8 +38,9 @@ export PS1="\[$CYAN\]\w\[$RESTORE\]\[$YELLOW\] \$(parse_git_branch)\[$RESTORE\]\
 # load bash aliases
 [ -r ~/.bash_aliases ] && . ~/.bash_aliases
 
-# Homebrew env vars
+# Set env vars
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# pyenv env vars
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
